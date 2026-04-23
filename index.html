@@ -196,6 +196,7 @@
     .qr-container {
       position: absolute;
       right: -40px;
+      /* Pushed it down slightly so it clears the name */
       top: 50%;
       margin-top: -85px;
       width: 170px;
@@ -218,19 +219,22 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px var(--cyan-glow);
     }
 
-    .qr-container img {
-      width: 110px;
-      height: 110px;
-    }
-
     .qr-label {
-      position: absolute;
-      top: 15px;
-      font-size: 10px;
+      /* Relative positioning keeps it in flow above the image */
+      position: relative;
+     margin-bottom: 8px; /* Adds space between text and code */
+      font-size: 11px;
       font-weight: 800;
       color: #333;
       text-transform: uppercase;
       letter-spacing: 1px;
+      z-index: 2;
+
+      .qr-container img {
+      width: 100px; 
+      height: 100px;
+      object-fit: contain; 
+      z-index: 1;
     }
 
   </style>
