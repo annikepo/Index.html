@@ -195,7 +195,7 @@
     /* The overlapping QR Code */
     .qr-container {
       position: absolute;
-      right: -40px; /* Sticks out off the edge */
+      right: -40px;
       top: 50%;
       margin-top: -85px;
       width: 170px;
@@ -203,6 +203,7 @@
       background: #fff;
       border-radius: 50%;
       display: flex;
+      flex-direction: column; /* Stacks text and image vertically */
       justify-content: center;
       align-items: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
