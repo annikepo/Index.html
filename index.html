@@ -195,10 +195,12 @@
     /* The overlapping QR Code */
     .qr-container {
       position: absolute;
-      right: -25px; /* Pulls it slightly to the right */
-    bottom: 25px;  /* Yanks it aggressively down into the corner */
-      width: 170px;
-      height: 170px;
+     .qr-container {
+      position: absolute;
+      right: -30px; 
+      bottom: 20px; /* Anchors it down to the bottom corner out of the way */
+      width: 160px;
+      height: 160px;
       background: #fff;
       border-radius: 50%;
       display: flex;
@@ -210,6 +212,7 @@
       pointer-events: auto; 
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden; /* STRICT FIX: Prevents the image from spilling out */
     }
 
     .qr-container:hover {
@@ -217,21 +220,21 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px var(--cyan-glow);
     }
 
-    .qr-label {
-      position: relative;
-     margin-bottom: 8px; 
+   .qr-label {
       font-size: 11px;
       font-weight: 800;
       color: #333;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin-bottom: 5px; 
+      margin-top: 10px;
       z-index: 2;
+    }
 
-      .qr-container img {
-      width: 100px; 
-      height: 100px;
-      object-fit: contain;
-        margin-top: 15px;
+    .qr-container img {
+      width: 105px !important;  /* !important forces the browser to obey this size */
+      height: 105px !important;
+      object-fit: contain; 
       z-index: 1;
     }
 
